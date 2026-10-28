@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wedding of Aisyah &amp; Raka</title>
+  <meta name="description" content="Undangan pernikahan digital (contoh tugas kuliah HTML, CSS, dan JavaScript dasar).">
+
+  <!-- Google Fonts: serif untuk judul, sans-serif untuk isi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript eksternal (pendekatan utama). defer = jalan setelah HTML selesai dibaca -->
+  <script src="script.js" defer></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+<body class="locked">
+
+  <!-- Sprite ornamen SVG (dipakai berulang lewat <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="ornament-flower" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <ellipse cx="50" cy="26" rx="12" ry="22"/>
+        <ellipse cx="50" cy="26" rx="12" ry="22" transform="rotate(72 50 50)"/>
+        <ellipse cx="50" cy="26" rx="12" ry="22" transform="rotate(144 50 50)"/>
+        <ellipse cx="50" cy="26" rx="12" ry="22" transform="rotate(216 50 50)"/>
+        <ellipse cx="50" cy="26" rx="12" ry="22" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="9" fill="#c3a26b"/>
+    </symbol>
+    <symbol id="ornament-leaf" viewBox="0 0 100 40">
+      <path d="M4 20 Q50 -8 96 20 Q50 48 4 20Z" fill="currentColor"/>
+      <path d="M4 20 L96 20" stroke="#fffdf8" stroke-width="1.5" fill="none"/>
+    </symbol>
+  </svg>
+
+  <!-- ============ 1. SAMPUL UNDANGAN ============ -->
+  <header id="cover" class="cover">
+    <svg class="orn orn-tl" aria-hidden="true"><use href="#ornament-flower"/></svg>
+    <svg class="orn orn-br" aria-hidden="true"><use href="#ornament-flower"/></svg>
+    <div class="cover-content">
+      <p class="cover-small">The Wedding of</p>
+      <h1 class="cover-names script" id="coverNames">Aisyah &amp; Raka</h1>
+      <p class="cover-date" id="coverDate">—</p>
+      <div class="cover-guest">
+        <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <p class="guest-name" id="coverGuest">Ir. H. Joko Widodo.</p>
+        <p class="hint">Mohon maaf apabila ada kesalahan penulisan nama/gelar.</p>
+      </div>
+      <button type="button" class="btn btn-primary" id="openBtn">Buka Undangan</button>
+    </div>
+  </header>
+
+  <!-- ============ 2. NAVIGASI ============ -->
+  <nav id="navbar" class="navbar" aria-label="Navigasi utama">
+    <a href="#home" class="nav-brand script" id="navBrand">A &amp; R</a>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a class="nav-link" href="#home">Home</a></li>
+      <li><a class="nav-link" href="#mempelai">Mempelai</a></li>
+      <li><a class="nav-link" href="#acara">Acara</a></li>
+      <li><a class="nav-link" href="#kisah">Kisah Kami</a></li>
+      <li><a class="nav-link" href="#galeri">Galeri</a></li>
+      <li><a class="nav-link" href="#rsvp">RSVP</a></li>
+      <li><a class="nav-link" href="#hadiah">Hadiah</a></li>
+      <li><a class="nav-link" href="#ucapan">Ucapan</a></li>
+    </ul>
+  </nav>
+  <main id="konten" class="konten">
+
+    <!-- ============ 3. HERO ============ -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow">The Wedding of</p>
+          <h2 class="hero-names script" id="heroNames">Aisyah &amp; Raka</h2>
+          <p class="hero-date" id="heroDate">—</p>
+          <p class="hero-sentence" id="heroText">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+          <div class="btn-row">
+            <a href="#acara" class="btn btn-primary">Lihat Detail Acara</a>
+            <a href="#rsvp" class="btn btn-outline">Konfirmasi Kehadiran</a>
+          </div>
+        </div>
+        <figure class="hero-photo reveal">
+          <img id="heroImg" src="assets/images/couple.jpg" alt="Foto pasangan pengantin (contoh)">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 4. PROFIL MEMPELAI ============ -->
+    <section id="mempelai" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Bismillahirrahmanirrahim</p>
+          <h2 class="section-title">Mempelai</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+          <p class="section-sub">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan penuh syukur kami menikahkan putra-putri kami.</p>
+        </header>
+
+        <div class="profile-grid">
+          <article class="profile-card reveal" id="brideCard">
+            <div class="profile-photo"><img id="brideImg" src="assets/images/bride.jpg" alt="Foto mempelai wanita (contoh)"></div>
+            <h3 class="profile-name" id="brideName">Nama Mempelai Wanita</h3>
+            <p class="profile-order" id="brideOrder"></p>
+            <p class="profile-parents" id="brideParents">bapak Ir. H. Joko Widodo</p>
+            <p class="profile-social" id="brideSocial"></p>
+          </article>
+
+          <article class="profile-card reveal" id="groomCard">
+            <div class="profile-photo"><img id="groomImg" src="assets/images/groom.jpg" alt="Foto mempelai pria (contoh)"></div>
+            <h3 class="profile-name" id="groomName">Nama Mempelai Pria</h3>
+            <p class="profile-order" id="groomOrder"></p>
+            <p class="profile-parents" id="groomParents">bapak Dr. H. Andi Saputra</p>
+            <p class="profile-social" id="groomSocial"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. HITUNG MUNDUR ============ -->
+    <section id="countdown-section" class="section countdown-section">
+      <div class="container reveal">
+        <p class="eyebrow light">Menuju Hari Bahagia</p>
+        <div class="countdown" id="countdown" role="timer" aria-live="off">
+          <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Hari</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Jam</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-minutes">00</span><span class="cd-label">Menit</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-seconds">00</span><span class="cd-label">Detik</span></div>
+        </div>
+        <p class="cd-message" id="cdMessage"></p>
+      </div>
+    </section>
+
+    <!-- ============ 6. INFORMASI ACARA ============ -->
+    <section id="acara" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Save The Date</p>
+          <h2 class="section-title">Acara Pernikahan</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+        </header>
+        <div class="event-grid" id="eventList"><!-- diisi JavaScript dari CONFIG.acara --></div>
+    </section>
+
+    <!-- ============ 9. KUTIPAN & DOA ============ -->
+    <section id="kutipan" class="section quote-section">
+      <div class="container narrow reveal">
+        <svg class="quote-flower" aria-hidden="true"><use href="#ornament-flower"/></svg>
+        <blockquote class="quote-box">
+          <p class="quote-text" id="quoteText">…</p>
+          <footer class="quote-source" id="quoteSource"></footer>
+        </blockquote>
+        <button type="button" class="btn btn-outline" id="quoteBtn">Ganti Kutipan</button>
+      </div>
+    </section>
+
+    <!-- ============ 7. KISAH CINTA ============ -->
+    <section id="kisah" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Love Story</p>
+          <h2 class="section-title">Kisah Kami</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+        </header>
+        <ol class="timeline" id="timeline"><!-- diisi JavaScript dari CONFIG.kisah --></ol>
+      </div>
+    </section>
+
+    <!-- ============ 8. GALERI ============ -->
+    <section id="galeri" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Our Moments</p>
+          <h2 class="section-title">Galeri Foto</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+          <p class="section-sub">Klik foto untuk melihat tampilan yang lebih besar.</p>
+        </header>
+        <div class="gallery-grid" id="galleryGrid"><!-- diisi JavaScript dari CONFIG.galeri --></div>
+      </div>
+    </section>
+
+    <!-- ============ 11. RSVP ============ -->
+    <section id="rsvp" class="section section-alt">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">RSVP</p>
+          <h2 class="section-title">Konfirmasi Kehadiran</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+          <p class="section-sub">Mohon konfirmasi kehadiran Anda. Data hanya tersimpan di browser perangkat ini (LocalStorage), belum terkirim ke pemilik undangan.</p>
+        </header>
+
+        <form id="rsvpForm" class="form-card reveal" novalidate>
+          <div class="field">
+            <label for="rsvpName">Nama Tamu <span class="req">*</span></label>
+            <input type="text" id="rsvpName" name="nama" maxlength="60" autocomplete="name" placeholder="Nama lengkap Anda">
+            <p class="error" id="err-rsvpName" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="rsvpPhone">Nomor Telepon <span class="opt">(opsional)</span></label>
+            <input type="tel" id="rsvpPhone" name="telepon" maxlength="20" autocomplete="tel" placeholder="08xxxxxxxxxx">
+            <p class="error" id="err-rsvpPhone" role="alert"></p>
+          </div>
+
+          <fieldset class="field">
+            <legend>Konfirmasi Kehadiran <span class="req">*</span></legend>
+            <div class="radio-row">
+              <label class="radio"><input type="radio" name="status" value="hadir"><span>Hadir</span></label>
+              <label class="radio"><input type="radio" name="status" value="tidak"><span>Tidak Hadir</span></label>
+              <label class="radio"><input type="radio" name="status" value="ragu"><span>Belum Pasti</span></label>
+            </div>
+            <p class="error" id="err-rsvpStatus" role="alert"></p>
+          </fieldset>
+
+          <div class="field">
+            <label for="rsvpCount">Jumlah Tamu</label>
+            <input type="number" id="rsvpCount" name="jumlah" min="0" max="10" step="1" value="1" inputmode="numeric">
+            <p class="error" id="err-rsvpCount" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="rsvpNote">Catatan Tambahan <span class="opt">(opsional)</span></label>
+            <textarea id="rsvpNote" name="catatan" rows="3" maxlength="200" placeholder="Misalnya: datang bersama keluarga"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Kirim Konfirmasi</button>
+          <p class="success" id="rsvpSuccess" role="status"></p>
+        </form>
+
+        <div class="list-card reveal">
+          <h3>Daftar RSVP Tersimpan</h3>
+          <p class="summary" id="rsvpSummary"></p>
+          <ul class="entry-list" id="rsvpList"></ul>
+          <button type="button" class="btn btn-small btn-outline" id="rsvpClear">Hapus Semua RSVP (uji coba)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. HADIAH DIGITAL ============ -->
+    <section id="hadiah" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Wedding Gift</p>
+          <h2 class="section-title">Hadiah Pernikahan</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+          <p class="section-sub">Doa restu Anda adalah hadiah terbaik bagi kami. Namun jika ingin memberikan tanda kasih, Anda dapat menggunakan informasi berikut.</p>
+        </header>
+        <div class="gift-grid" id="giftList"><!-- diisi JavaScript dari CONFIG.hadiah --></div>P
+        <p class="thanks">Terima kasih atas doa dan kebaikan hati Anda.</p>
+      </div>
+    </section>
+
+    <!-- ============ 12. BUKU TAMU ============ -->
+    <section id="ucapan" class="section section-alt">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Guest Book</p>
+          <h2 class="section-title">Ucapan &amp; Doa</h2>
+          <div class="divider"><svg aria-hidden="true"><use href="#ornament-flower"/></svg></div>
+          <p class="section-sub">Ucapan disimpan di browser ini saja (tanpa server).</p>
+        </header>
+
+        <form id="guestForm" class="form-card reveal" novalidate>
+          <div class="field">
+            <label for="guestName">Nama <span class="req">*</span></label>
+            <input type="text" id="guestName" maxlength="40" autocomplete="name" placeholder="Nama Anda">
+            <p class="error" id="err-guestName" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="guestMessage">Ucapan &amp; Doa <span class="req">*</span></label>
+            <textarea id="guestMessage" rows="4" maxlength="300" placeholder="Tulis ucapan dan doa untuk kedua mempelai"></textarea>
+            <p class="counter" id="guestCounter">0 / 300</p>
+            <p class="error" id="err-guestMessage" role="alert"></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Kirim Ucapan</button>
+          <p class="success" id="guestSuccess" role="status"></p>
+        </form>
+
+        <div class="list-card reveal">
+          <h3>Ucapan Tersimpan (<span id="guestTotal">0</span>)</h3>
+          <ul class="entry-list" id="guestList"></ul>
+          <button type="button" class="btn btn-small btn-outline" id="guestClear">Hapus Semua Ucapan (uji coba)</button>
+        </div>
+      </div>
+    </section>
+
+    
+  <!-- ============ 13. FOOTER ============ -->
+  <footer class="footer">
+    <svg class="footer-flower" aria-hidden="true"><use href="#ornament-flower"/></svg>
+    <p class="footer-thanks">Terima kasih atas doa dan kehadiran Anda</p>
+    <p class="footer-names script" id="footerNames">Aisyah &amp; Raka</p>
+    <p class="footer-date" id="footerDate">—</p>
+    <button type="button" class="btn btn-small btn-light" id="backTop">&uarr; Kembali ke Atas</button>
+    <p class="copyright">&copy; <span id="year">2027</span> Undangan contoh &mdash; proyek tugas kuliah HTML, CSS &amp; JavaScript.</p>
+  </footer>
+
+  <!-- Lightbox galeri -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Tampilan foto besar" hidden>
+    <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Tutup">&times;</button>
+    <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Foto sebelumnya">&#10094;</button>
+    <figure class="lb-figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Foto berikutnya">&#10095;</button>
+  </div>
+
+  <!-- Notifikasi (toast) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript internal (contoh pembelajaran singkat) -->
+  <script>
+    console.log('Internal JS: tag <script> di index.html ikut berjalan');
+  </script>
+</body>
+</html>
