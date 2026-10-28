@@ -972,9 +972,6 @@
     });
   }
 
-  /* ===================================================================
-     4. LAB — demonstrasi materi (hasil dicetak di halaman + console)
-     =================================================================== */
 
   // Function declaration: punya parameter (a, b) dan nilai kembali (return)
   function tambah(a, b) {
@@ -1025,18 +1022,6 @@
     }
     baris.push('[typeof] ' + hasilTipe.join(' | '));
     baris.push('[typeof null] "' + typeof null + '" (perilaku khusus JavaScript)');
-
-    // --- Operator
-    baris.push('[Aritmatika] 7+2=' + (7 + 2) + ', 7-2=' + (7 - 2) + ', 7*2=' + (7 * 2) +
-      ', 7/2=' + (7 / 2) + ', 7%2=' + (7 % 2) + ', 2**3=' + (2 ** 3));
-    baris.push('[Perbandingan] "5"==5 -> ' + ('5' == 5) + ' | "5"===5 -> ' + ('5' === 5) + // eslint-disable-line eqeqeq
-      ' | 3!=4 -> ' + (3 != 4) + ' | 3!==3 -> ' + (3 !== 3) +
-      ' | 3<4 -> ' + (3 < 4) + ' | 3>4 -> ' + (3 > 4) + ' | 4<=4 -> ' + (4 <= 4) + ' | 4>=5 -> ' + (4 >= 5));
-    baris.push('[Logika] true&&false -> ' + (true && false) + ' | true||false -> ' + (true || false) +
-      ' | !true -> ' + (!true));
-    let n = 10;
-    n += 5; n -= 3; n *= 2; n /= 4;
-    baris.push('[Penugasan] n=10; += 5; -= 3; *= 2; /= 4 -> n = ' + n);
 
     // --- Function & arrow function
     baris.push('[Function] tambah(2, 3) = ' + tambah(2, 3) + ' | [Arrow] kuadrat(4) = ' + kuadrat(4));

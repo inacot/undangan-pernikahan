@@ -287,15 +287,6 @@ textarea { resize: vertical; }
 .gift-owner { color: var(--brown-soft); }
 .thanks { text-align: center; font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; margin-top: 1.2rem; }
 
-/* ---------- 16. Lab JavaScript ---------- */
-.lab { background: #f4efe6; border-top: 2px dashed var(--gold); }
-.lab-card { background: #fff; border-radius: var(--radius); padding: 1.3rem; margin-bottom: 1rem; border: 1px solid var(--line); }
-.lab-card h3 { font-size: 1.25rem; color: var(--sage-dark); }
-.lab-small { font-size: .85rem; color: var(--brown-soft); margin: .8rem 0 0; }
-.lab-title { font-family: var(--font-serif); font-size: 1.6rem; transition: font-size .3s ease, color .3s ease; }
-.lab-title-big { font-size: 2.1rem; }
-.lab-output { margin: 1rem 0 0; padding: 1rem; background: #2f2724; color: #f6e9d9; border-radius: 12px; font-size: .78rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 360px; overflow-y: auto; }
-
 /* ---------- 17. Footer ---------- */
 .footer { text-align: center; padding: 3.5rem 1.25rem 2rem; color: #fff; background: linear-gradient(160deg, var(--pink-dark), var(--sage-dark)); }
 .footer-flower { width: 44px; height: 44px; color: rgba(255, 255, 255, .6); margin: 0 auto .5rem; display: block; }
